@@ -1,0 +1,112 @@
+.nf-form-cont {
+	.nf-form-content input:not([type=button]),
+	.nf-form-content select.ninja-forms-field {
+		&:focus {
+			transition: background-color 0s;
+		}
+
+		&:-webkit-autofill {
+			transition: background-color 600000s ease-in-out 600000s,border 0.3s ease-in-out,text-fill-color 0.3s ease-in-out,box-shadow 0.3s ease-in-out !important;
+			border-color: #979797 !important;
+			-webkit-text-fill-color: #b5b5b5 !important;
+			-webkit-box-shadow: 0 0 0 1000px rgba($white, 1) inset !important;
+			background-color: rgba($white, 1) !important;
+
+			&:hover,
+			&:focus,
+			&:active {
+				-webkit-text-fill-color: rgba($white, 1) !important;
+				border-color: rgba($white, 1) !important;
+			}
+		}
+	}
+
+	.nf-form-fields-required {
+		display: none;
+	}
+
+	.nf-field-container {
+
+		.field-wrap {
+			display: block;
+			position: relative;
+			width: 100%;
+
+			&.field-wrap.nf-error {
+				.nf-field-element {
+					.nf-element:not([type="button"]) {
+						border-color: #e80000;
+					}
+				}
+			}
+
+			&.submit-wrap {
+				.button {
+					width: 100%;
+				}
+			}
+		}
+		.nf-input-limit {
+			margin: 0;
+			padding: 0;
+		}
+		.nf-after-field {
+			position: relative;
+			.nf-error-wrap {
+				.nf-error-msg {
+					margin: 5px 0 0;
+					font-size: 1.2rem;
+					font-weight: 600;
+					text-transform: uppercase;
+					line-height: 1;
+
+					position: absolute;
+					width: 100%;
+					right: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.nf-field-element {
+		.nf-element:not([type="button"]):not(.button) {
+			display: block;
+			height: rem(56);
+			padding: rem(18) rem(16);
+			background: $wildSand;
+			border: 1px solid $deepCove5;
+			border-radius: 4px;
+			font-family: $montserrat;
+			font-style: normal;
+			font-weight: 500;
+			font-size: rem(14);
+			line-height: 1.4;
+			color: $deepCove;
+			transition: all $transition-default;
+
+			@include breakpoint-down(mobile-small) {
+				height: rem(48);
+				padding: rem(14) rem(16);
+			}
+
+			&::placeholder {
+				color: $deepCove60;
+			}
+
+			&:focus {
+				border: 1px solid $deepCove20;
+			}
+		}
+	}
+
+	.nf-after-form-content {
+		padding: rem(10) 8px 0;
+		.nf-form-errors {
+			text-transform: uppercase;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+	}
+
+}
