@@ -3,8 +3,8 @@
  */
 const del = require("del");
 const gulp = require("gulp");
-const sass = require("gulp-sass")(require('sass'));
 const path = require("path");
+const sass = require("gulp-sass")(require("sass"));
 const utils = require("./utils");
 const gulpif = require("gulp-if");
 const rename = require("gulp-rename");
@@ -14,7 +14,7 @@ const plumber = require("gulp-plumber");
 const webpack = require("webpack-stream");
 const bundler = require("webpack");
 const imagemin = require("gulp-imagemin");
-const imageminMozjpeg = import("imagemin-mozjpeg");
+const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminPNGquant = require("imagemin-pngquant");
 const sourcemaps = require("gulp-sourcemaps");
 const rev = require("gulp-rev");

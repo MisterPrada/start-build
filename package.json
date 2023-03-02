@@ -4,7 +4,7 @@
 	"description": "Starter for WP projects",
 	"author": "Harbinger Marketing",
 	"engines": {
-		"node": ">=6.9.1"
+		"node": ">=19.0.0"
 	},
 	"scripts": {
 		"start": "gulp --gulpfile resources/build/gulp.js",
@@ -37,9 +37,9 @@
 		"gulp-postcss": "^6.4.0",
 		"gulp-rename": "^1.2.2",
 		"gulp-rev": "^8.1.0",
-		"gulp-sourcemaps": "^2.6.1",
 		"gulp-sass": "^5.1.0",
 		"sass": "^1.58.3",
+		"gulp-sourcemaps": "^2.6.1",
 		"imagemin-mozjpeg": "^10.0.0",
 		"imagemin-pngquant": "^9.0.2",
 		"md5": "^2.2.1",

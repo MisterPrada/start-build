@@ -257,7 +257,7 @@ module.exports = () => {
 	);
 
 	// Generate the table of contents at the top of the bundle.
-	// plugins.push(require("postcss-toc"));
+	//plugins.push(require("postcss-toc"));
 
 	// Enable `color` support.
 	plugins.push(require("postcss-color-function"));
