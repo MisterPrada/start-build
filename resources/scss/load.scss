@@ -22,7 +22,13 @@
 	Components
 \* ------------------------------------------------------------ */
 
-@import "components/*";
+@import "components/_buttons";
+@import "components/_image-fit";
+@import "components/_modals";
+@import "components/_post-card";
+@import "components/_preloader";
+@import "components/_search-input-for-sections";
+@import "components/_tabs-nav";
 
 /* ------------------------------------------------------------ *\
 	Plugins
