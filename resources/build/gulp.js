@@ -4,8 +4,7 @@
 const del = require("del");
 const gulp = require("gulp");
 const path = require("path");
-const sass = require("gulp-sass");
-const sassGlob = require("gulp-sass-glob");
+const sass = require("gulp-sass")(require("sass"));
 const utils = require("./utils");
 const gulpif = require("gulp-if");
 const rename = require("gulp-rename");
@@ -55,7 +54,6 @@ const styles = () => {
 			allowEmpty: true,
 		})
 		.pipe(gulpif(isDev, sourcemaps.init()))
-		.pipe(sassGlob())
 		.pipe(
 			sass({
 				paths: [".", path.resolve(__dirname, "../node_modules")],
@@ -77,7 +75,6 @@ const blockStyles = () => {
 			allowEmpty: true,
 		})
 		.pipe(gulpif(isDev, sourcemaps.init()))
-		.pipe(sassGlob())
 		.pipe(
 			sass({
 				paths: [".", path.resolve(__dirname, "../node_modules")],
@@ -106,7 +103,6 @@ const adminstyles = () => {
 			allowEmpty: true,
 		})
 		.pipe(gulpif(isDev, sourcemaps.init()))
-		.pipe(sassGlob())
 		.pipe(
 			sass({
 				paths: [".", path.resolve(__dirname, "../node_modules")],
