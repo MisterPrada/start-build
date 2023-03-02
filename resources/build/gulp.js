@@ -179,7 +179,7 @@ const optimize = () => {
 				// https://github.com/imagemin/imagemin-optipng#api
 				imageminPNGquant({
 					speed: 1,
-					quality: 90,
+					quality: [.8, .9],
 				}),
 
 				// SVG
