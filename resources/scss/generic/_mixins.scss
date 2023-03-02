@@ -18,7 +18,7 @@
 
 	@if $max == 767px {
 		@media (max-width: $max),
-			screen and (max-width: $responsive-ios) and (orientation: landscape) {
+		screen and (max-width: $responsive-ios) and (orientation: landscape) {
 			@content;
 		}
 	} @else {
