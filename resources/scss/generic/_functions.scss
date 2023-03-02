@@ -29,9 +29,9 @@ $html-font-size-sm: 8px;
 }
 
 @function rem($pxValue) {
-    @return calc(#{stripUnit($pxValue) / stripUnit($html-font-size)})rem;
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
 
 @function rem_sm($pxValue) {
-    @return calc(#{stripUnit($pxValue) / stripUnit($html-font-size-sm)})rem;
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size-sm)}rem;
 }
