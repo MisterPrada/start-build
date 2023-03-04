@@ -16,7 +16,9 @@
 		"bootstrap": "^5.2.3",
 		"gulp": "^4.0.0",
 		"swiper": "^8.4.6",
-		"youtube-player": "^5.5.2"
+		"youtube-player": "^5.5.2",
+		"jquery.scrollbar": "^0.2.11",
+		"select2": "^4.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.1.0",
@@ -38,6 +40,7 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-rev": "^4.0.0",
 		"gulp-sass": "^5.1.0",
+		"gulp-sass-glob": "^1.1.0",
 		"sass": "^1.58.3",
 		"gulp-sourcemaps": "^3.0.0",
 		"imagemin-mozjpeg": "^8.0.0",
