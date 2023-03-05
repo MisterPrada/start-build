@@ -1,14 +1,13 @@
-/*
- * Modules
+/**
+ * Internal Dependencies
  */
-
 import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/collapse";
 import "./modules/hide-preloader";
 import "./modules/horizontal-scroll";
-import hideFocusOnDesktop from "./modules/hideFocusOnDesktop";
-import modalVideoLogic from "./modules/modalVideoLogic";
-import modalYoutubeVideoLogic from "./modules/modalYoutubeVideoLogic";
+import hideFocusOnDesktop from "./modules/hide-focus-on-desktop";
+import modalVideoLogic from "./modules/modal-video-logic";
+import modalYoutubeVideoLogic from "./modules/modal-youtube-video-logic";
 import updateStyleVariables from "./modules/resize-dependent";
 
 
@@ -33,13 +32,10 @@ const front = function() {
 
 
 $(function () {
-	if ( $('body').hasClass('wp-admin') || $('body').hasClass('block-editor-iframe__body') ) {
+	if ( $('body').hasClass('wp-admin') || $('body').hasClass('block-editor-iframe__body') )
 		admin();
-	} else {
+	else
 		front();
-	}
 });
 
-function initMap() {
-	return;
-}
+const initMap = () => {}

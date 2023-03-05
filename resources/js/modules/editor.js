@@ -1,8 +1,8 @@
-export default function adminInitializeBlock(initializeCallback, parentSelector) {
+export default function resetBlockEvents( initializeCallback, parentSelector ) {
 	return (e) => {
 		const $parentContainer = e.find(parentSelector)
 
-		initializeCallback($parentContainer, true)
+		initializeCallback( $parentContainer, true )
 
 		const buttons = $parentContainer.find('button');
 		const inputsButton = $parentContainer.find('input[type="button"]')

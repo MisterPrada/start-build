@@ -1,7 +1,3 @@
-export const $win = $(window);
-export const $doc = $(document);
-export const $body = $("body");
-
 export const breakpointResizer = function() {
 	const breakpoints = [
 		{ name: 'mobile-small', interval: { min: 360, max: 575 }, callbacks: [] },
@@ -115,4 +111,8 @@ export const breakpointResizer = function() {
 			}
 		}
 	}
+}
+
+export default {
+	breakpointResizer
 }
