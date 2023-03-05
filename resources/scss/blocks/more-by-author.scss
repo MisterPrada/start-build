@@ -7,139 +7,22 @@
 @import "../generic/mixins";
 
 /* ------------------------------------------------------------ *\
-	Blocks: Section More By Author
+	Block: Section More By Author (Admin)
+\* ------------------------------------------------------------ */
+
+.acf-block-preview .section-more-by-author * {
+	pointer-events: none !important;
+
+	& .post-empty-message a {
+		pointer-events: auto !important;
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Block: Section More By Author (Front)
 \* ------------------------------------------------------------ */
 
 .section-more-by-author,
 .acf-block-preview .section-more-by-author {
-	background-color: $white;
 
-	&__content {
-		padding: rem(76) 0 rem(72);
-
-		@include breakpoint-down(small-desktop) {
-			padding: rem(52) 0 rem(56);
-		}
-
-		@include breakpoint-down(mobile) {
-			padding: rem(44) 0 rem(56);
-		}
-	}
-
-	&__title {
-		margin-bottom: rem(32);
-	}
-
-	.slider-more-by-author {
-		&__info {
-			display: flex;
-			justify-content: space-between;
-			margin-top: rem(32);
-
-			@include breakpoint-down(mobile) {
-				display: block;
-				margin-top: rem(24);
-			}
-		}
-	
-		&__number-of-articles {
-			flex: 0 0 auto;
-			font-family: $montserrat;
-			font-weight: 500;
-			font-size: rem(16);
-			line-height: rem(20);
-			text-transform: uppercase;
-			color: $deepCove80;
-		}
-	
-		&__nav {
-			flex: 0 0 rem(252);
-			display: flex;
-			justify-content: space-between;
-			text-align: right;
-
-			@include breakpoint-down(mobile) {
-				margin-top: rem(16);
-				width: rem(227);
-			}
-		}
-
-		&__slider-control {
-			flex: 0 0 auto;
-			display: inline-flex;
-			align-items: center;
-			color: $cerulean;
-			font-weight: 500;
-			font-size: rem(18);
-			text-decoration: none;
-			outline: none;
-			transition: color $transition-default;
-
-			.icon {
-				display: inline-block;
-				width: rem(24);
-				min-width: rem(24);
-				height: rem(10);
-				color: inherit;
-
-				svg {
-					display: block;
-					width: 100%;
-					height: 100%;
-					path {
-						stroke: currentColor;
-					}
-				}
-			}
-
-			@media (hover: hover) {
-				&:hover {
-					color: $scienceBlue;
-				}
-			}
-
-			&--next {
-				.icon {
-					margin-top: rem(6);
-					margin-left: rem(8);
-					transform: scale(1, -1);
-				}
-			}
-
-			&--prev {
-				.icon {
-					margin-top: rem(-4);
-					margin-right: rem(8);
-					transform: scale(-1, 1);
-				}
-			}
-
-			&.swiper-button-disabled {
-				@media (hover: hover) {
-					&:hover {
-						color: $cerulean;
-					}
-				}
-			}
-		}
-
-		&__pagination {
-			max-width: fit-content;
-			font-family: $montserrat;
-			font-weight: 500;
-			font-size: rem(16);
-			line-height: rem(20);
-			text-transform: uppercase;
-			color: $deepCove80;
-			// margin: 0 rem(24);
-
-			@include breakpoint-down(mobile) {
-				// margin: 0 rem(16);
-			}
-
-			& > .swiper-pagination-total {
-				color: $deepCove20;
-			}
-		}
-	}
 }
