@@ -10,6 +10,7 @@
 		"start": "gulp --gulpfile resources/build/gulp.js",
 		"dev": "cross-env NODE_ENV=development npm run start -- dev",
 		"build": "cross-env NODE_ENV=production npm run start -- build",
+		"watch": "cross-env NODE_ENV=production npm run start -- watch",
 		"hot": "cross-env NODE_ENV=production npm run start -- --devUrl https://peoplesbankandtrust"
 	},
 	"dependencies": {

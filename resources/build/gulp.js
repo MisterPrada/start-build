@@ -248,6 +248,8 @@ const watch = () => {
 	);
 
 	gulp.watch([utils.srcImagesPath("**/*")], images);
+
+	gulp.watch([utils.srcScriptsPath("**/*")], scripts);
 };
 
 /**
@@ -274,7 +276,18 @@ gulp.task(
 	gulp.series(
 		clean,
 		gulp.parallel(styles, blockStyles, adminstyles, images),
-		gulp.parallel(scripts, watch, reload)
+		gulp.parallel(scripts),
+		gulp.parallel(watch, reload)
+	)
+);
+
+gulp.task(
+	"watch",
+	gulp.series(
+		clean,
+		gulp.parallel(styles, blockStyles, adminstyles, images),
+		gulp.parallel(scripts),
+		gulp.parallel(watch)
 	)
 );
 

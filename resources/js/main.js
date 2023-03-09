@@ -10,7 +10,6 @@ import modalVideoLogic from "./modules/modal-video-logic";
 import modalYoutubeVideoLogic from "./modules/modal-youtube-video-logic";
 import updateStyleVariables from "./modules/resize-dependent";
 
-
 const admin = function() {
 	setTimeout(() => {
 		updateStyleVariables();
