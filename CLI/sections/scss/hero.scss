@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../resources/scss/generic/variables";
+@import "../../../resources/scss/generic/functions";
+@import "../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.acf-block-preview .section-hero * {
+	pointer-events: none !important;
+
+	& .post-empty-message a {
+		pointer-events: auto !important;
+	}
+}
+
+.section-hero,
+.acf-block-preview .section-hero {
+
+}

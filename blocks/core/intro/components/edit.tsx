@@ -1,4 +1,6 @@
-// Libs
+/**
+ * WordPress dependencies
+ */
 import {
 	__experimentalInputControl as InputControl,
 	TextareaControl,
@@ -6,29 +8,43 @@ import {
 	PanelBody,
 	PanelRow
 } from '@wordpress/components'
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor'
+
+import {
+	useBlockProps,
+	useInnerBlocksProps,
+	InspectorControls,
+	store as blockEditorStore
+} from '@wordpress/block-editor'
+
+import { useSelect, withDispatch, useDispatch } from '@wordpress/data'
+import { Path, SVG } from '@wordpress/primitives'
+import { createBlock } from '@wordpress/blocks'
 import { more } from '@wordpress/icons'
 import { __ } from '@wordpress/i18n'
+
 
 // Components
 import SectionBackground, { BackgroundFields, backgroundType } from '../../../../resources/js/template-parts/section-background'
 
-// @ts-ignore Assets
-import LongArrow from '../../../../dist/images/icons/icon-long-arrow.svg'
-
-// Types
+/**
+ * Types
+ */
+import { TEditBlockDispatch } from '../../../../resources/types/libs'
 import { UploadImage, UploadVideo } from '../../../../resources/types/types'
 import { TAttributes } from '../'
 
+const THEME_TEXT_DOMAIN = 'react-wordpress'
+const BUTTON_COMPONENT = 'ea-component/button'
+const ALLOWED_BLOCKS = [ BUTTON_COMPONENT ]
 
 type TProps = {
-    attributes: TAttributes,
+	clientId: string
+    attributes: TAttributes
     setAttributes: ( {} ) => any
 }
 
-
 const IntroEdit = ( props: TProps ) => {
-    const { attributes, setAttributes } = props
+    const { clientId, attributes, setAttributes } = props
     const {
 		backgroundType: bgType,
 		backgroundImage,
@@ -41,10 +57,20 @@ const IntroEdit = ( props: TProps ) => {
 		description
 	} = attributes
     const blockProps = useBlockProps()
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		allowedBlocks: ALLOWED_BLOCKS,
+		renderAppender: false,
+	} )
+	const hasInnerBlocks = useSelect( ( select: any ) => select( blockEditorStore ).getBlocks( clientId ).length > 0, [clientId] )
+	const { replaceInnerBlocks }: TEditBlockDispatch = useDispatch( blockEditorStore)
 
-    blockProps.className += ' section section-hero'
+	if ( !hasInnerBlocks ) {
+		replaceInnerBlocks( clientId, [
+			createBlock( BUTTON_COMPONENT, {} )
+		] )
+	}
 
-    const THEME_TEXT_DOMAIN = 'react-wordpress'
+    blockProps.className += ' section section-hero block-preview'
 
 	const setKicker = ( value: string ) => {
 		setAttributes( { kicker: value } )
@@ -176,22 +202,24 @@ const IntroEdit = ( props: TProps ) => {
 								</div>
 
 								<div className="buttons-wrap section-hero__buttons-container">
-									<a
-										className="button button--fill"
-										href="#"
-										target="__blank"
-									>
-										<span className="button__text">
-											Button
-										</span>
-									</a>
+									<div { ...innerBlocksProps } />
 								</div>
 							</div>
 
 							<div className="scroll-down section-hero__scroll">
 								<button className="button button--scroll-down js-scroll-to-next-section">
 									<span className="icon icon-wrap button--scroll-down-icon">
-										{/*{ LongArrow }*/}
+										<SVG width="24" height="98" viewBox="0 0 24 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<g clipPath="url(#clip0_965_21792)" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+												<Path d="M14 4v90m-7-7l7 7"/>
+											</g>
+
+											<defs>
+												<clipPath id="clip0_965_21792">
+													<Path fill="#fff" transform="matrix(0 1 1 0 0 0)" d="M0 0h98v24H0z"/>
+												</clipPath>
+											</defs>
+										</SVG>
 									</span>
 								</button>
 

@@ -228,8 +228,8 @@ const TabEditContainerWrapper = withDispatch( ( dispatch, ownProps, registry: TR
 const TabsEdit = ( props: TProps ) => {
     const { clientId, attributes } = props
     const {  } = attributes
-    const hasInnerBlocks = useSelect( ( select: any ) => select( blockEditorStore ).getBlocks( clientId ).length > 0, [ clientId ] );
-	const { replaceInnerBlocks } = useDispatch( blockEditorStore );
+    const hasInnerBlocks = useSelect( ( select: any ) => select( blockEditorStore ).getBlocks( clientId ).length > 0, [clientId] );
+	const { replaceInnerBlocks }: TEditBlockDispatch = useDispatch( blockEditorStore );
 
 	if ( !hasInnerBlocks )
 		replaceInnerBlocks( clientId, [
