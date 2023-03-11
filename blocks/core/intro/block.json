@@ -1,12 +1,12 @@
 {
   "apiVersion": 2,
-  "name": "ea-component/tabs",
-  "title": "Tabs",
-  "category": "hm-components",
+  "name": "ea-section/intro",
+  "title": "Intro",
+  "category": "hm-sections",
   "icon": "block-default",
-  "description": "Create tabs.",
+  "description": "Display hero section.",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "script": "block-tabs"
+  "script": ""
 }

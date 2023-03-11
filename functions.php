@@ -64,13 +64,6 @@ function hm_load_theme_dependencies() {
 	# Add theme constants
 	require_once('config/constants.php');
 
-	# Test
-	wp_register_script( 'block-tabs', get_template_directory_uri() . hm_assets_bundle( 'js/blocks/block-tabs.js' ), ['jquery', 'acf'] );
-
-	register_block_type( __DIR__ . '/build/tabs/block.json' );
-	register_block_type( __DIR__ . '/build/tab/block.json' );
-	register_block_type( __DIR__ . '/build/columns/block.json' );
-
 	# Autoload dependencies
 	$autoload_dir = THEME_DIR . 'vendor/autoload.php';
 	if ( ! is_readable( $autoload_dir ) ) {

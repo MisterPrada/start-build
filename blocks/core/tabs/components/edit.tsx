@@ -14,7 +14,7 @@ import { PanelBody, Notice, RangeControl } from '@wordpress/components'
 
 // Types
 import { TAttributes } from '../'
-import { TEditBlockDispatch, TBlock, TRegistry } from '../../../resources/types/libs'
+import { TEditBlockDispatch, TBlock, TRegistry } from '../../../../resources/types/libs'
 
 export type TProps = {
     clientId: string,
@@ -22,7 +22,8 @@ export type TProps = {
     setAttributes: ( {} ) => any
 }
 
-const ALLOWED_BLOCKS = [ 'react-wordpress/tab' ]
+const TAB_COMPONENT = 'ea-component/tab'
+const ALLOWED_BLOCKS = [ TAB_COMPONENT ]
 const THEME_TEXT_DOMAIN = 'react-wordpress'
 
 type TTabItem = {
@@ -178,7 +179,7 @@ const TabEditContainerWrapper = withDispatch( ( dispatch, ownProps, registry: TR
 			// Add new tabs.
 			innerBlocks = [
 				...innerBlocks,
-				createBlock( 'react-wordpress/tab', {
+				createBlock( TAB_COMPONENT, {
 					isActive: true,
 					tabName: `Tab ${ innerBlocks.length }`
 				} )
@@ -202,7 +203,7 @@ const TabEditContainerWrapper = withDispatch( ( dispatch, ownProps, registry: TR
 		// Add new tab
 		innerBlocks = [
 			...innerBlocks,
-			createBlock( 'react-wordpress/tab', { isActive: true, tabName } )
+			createBlock( TAB_COMPONENT, { isActive: true, tabName } )
 		];
 
 		replaceInnerBlocks( clientId, innerBlocks )
@@ -232,7 +233,7 @@ const TabsEdit = ( props: TProps ) => {
 
 	if ( !hasInnerBlocks )
 		replaceInnerBlocks( clientId, [
-			createBlock( 'react-wordpress/tab', {
+			createBlock( TAB_COMPONENT, {
 				isActive: true,
 				tabName: __( 'Tab 0', THEME_TEXT_DOMAIN )
 			} )

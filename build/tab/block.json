@@ -1,10 +1,10 @@
 {
   "apiVersion": 2,
-  "name": "react-wordpress/tab",
+  "name": "ea-component/tab",
   "title": "Tab",
   "category": "hm-components",
   "parent": [
-    "react-wordpress/tabs"
+    "ea-component/tabs"
   ],
   "icon": "block-default",
   "description": "Create tabs.",
