@@ -174,6 +174,18 @@ const IntroEdit = ( props: TProps ) => {
 										{ description }
 									</p>
 								</div>
+
+								<div className="buttons-wrap section-hero__buttons-container">
+									<a
+										className="button button--fill"
+										href="#"
+										target="__blank"
+									>
+										<span className="button__text">
+											Button
+										</span>
+									</a>
+								</div>
 							</div>
 
 							<div className="scroll-down section-hero__scroll">
