@@ -2,15 +2,15 @@
 	Generic
 \* ------------------------------------------------------------ */
 
-@import "../../../resources/scss/generic/variables";
-@import "../../../resources/scss/generic/functions";
-@import "../../../resources/scss/generic/mixins";
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
 
 /* ------------------------------------------------------------ *\
-	Block: Section {{name}}
+	Component: Gallery Slider
 \* ------------------------------------------------------------ */
 
-.acf-block-preview .section-{{name}} * {
+.acf-block-preview .section-hero * {
 	pointer-events: none !important;
 
 	& .post-empty-message a {
@@ -18,7 +18,7 @@
 	}
 }
 
-.section-{{name}},
-.acf-block-preview .section-{{name}} {
+.block-gallery,
+.acf-block-preview .block-gallery {
 
 }
