@@ -29,13 +29,13 @@ registerBlockType( metadata.name, {
 		type: {
 			enum: [ 'link', 'popup', 'video' ]
 		},
+		// Link
 		link: {
 			type: 'string'
 		},
 		target: {
 			type: 'string'
 		},
-
 		value: {
 			type: 'string'
 		}
