@@ -22,8 +22,10 @@ export type TAttributes = {
     backgroundImageAlt: string
     backgroundVideo: string
     posterImage: string
-    title: string
-    kicker: string
+	kicker: string,
+	title: string,
+	subtitle: string,
+	description: string
 }
 
 
@@ -34,21 +36,14 @@ registerBlockType( metadata.name, {
         backgroundImageAlt: { type: 'string' },
         backgroundVideo: { type: 'string' },
         posterImage: { type: 'string' },
-        title: { type: 'string' },
-        kicker: { type: 'string' }
+
+		kicker: { type: 'string' },
+		title: { type: 'string' },
+		subtitle: { type: 'string' },
+		description: { type: 'string' }
     },
 
-    example: {
-        attributes: {
-            backgroundType: '',
-            backgroundImage: '',
-            backgroundImageAlt: '',
-            backgroundVideo: '',
-            posterImage: '',
-            title: 'Intro Section',
-            kicker: 'Kicker'
-        }
-    },
+    example: {},
 
     edit: IntroEdit,
 

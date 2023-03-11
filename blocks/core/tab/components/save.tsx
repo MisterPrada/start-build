@@ -7,7 +7,7 @@ import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor'
  * Types
  */
 import { TAttributes } from '../index'
-import { TBlock } from '../../../resources/types/libs'
+import { TBlock } from '../../../../resources/types/libs'
 
 type TSaveProps = {
 	attributes: TAttributes,

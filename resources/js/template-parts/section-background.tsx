@@ -5,7 +5,7 @@ import { useState } from '@wordpress/element'
 import { __ } from '@wordpress/i18n'
 
 // Types
-import { MediaUploadRenderProp, UploadImage } from '../types/types'
+import { MediaUploadRenderProp, UploadImage } from '../../types/types'
 
 export enum backgroundType {
     None = 'none',
@@ -158,7 +158,7 @@ const SectionBackground = ( { type, imageSrc = '', imageAlt = '', videoSrc = '',
 
     return (
         <>
-            <div className="section__bg" aria-hidden="true">
+            <div className="section__bg section-hero__background menu-two-lines" aria-hidden="true">
                 <div className="background-img">
                     { type === backgroundType.Image ? imageBg() : null }
                     { type === backgroundType.Video ? videoBg() : null }
