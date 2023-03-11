@@ -4,11 +4,29 @@
 if(isset($argv[1])){
     if($argv[1] == 'make:section'){
 		if ( !empty( $argv[2] ) ) {
+			if ( file_exists( __DIR__ . '/blocks/sections/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
 			recurse_copy_template(__DIR__ . '/lib/cli/section', __DIR__ . '/blocks/sections/' . $argv[2], $argv[2]);
 		}else{
-			echo 'Error';
+			echo 'Please provide a name for the section.';
 		}
     }
+
+	if($argv[1] == 'make:component'){
+		if ( !empty( $argv[2] ) ) {
+			if ( file_exists( __DIR__ . '/blocks/components/' . $argv[2] ) ) {
+				echo "Section already exists.";
+				return;
+			}
+
+			recurse_copy_template(__DIR__ . '/lib/cli/component', __DIR__ . '/blocks/components/' . $argv[2], $argv[2]);
+		}else{
+			echo 'Please provide a name for the section.';
+		}
+	}
 }
 
 function recurse_copy_template($src, $dst, $templateName) {
@@ -22,7 +40,9 @@ function recurse_copy_template($src, $dst, $templateName) {
 				recurse_copy_template($src . '/' . $file,$dst . '/' . $new_file_name, $templateName);
 			}
 			else {
-				copy($src . '/' . $file,$dst . '/' . $new_file_name);
+				$file_contents = file_get_contents($src . '/' . $file);
+				$file_contents = str_replace('{{name}}', $templateName, $file_contents);
+				file_put_contents($dst . '/' . $new_file_name, $file_contents);
 			}
 		}
 	}
