@@ -18,27 +18,38 @@ import './styles/style.scss'
 // @ts-ignore Data
 import metadata from './block.json'
 
-
+export enum EType {
+	Link = 'link',
+	Popup = 'popup',
+	Video = 'video'
+}
 export type TAttributes = {
-
+	type: EType
+	value: string
+	link: string
+	target: string
+	popupId: number
+	videoType: string
+	videoFile: string
+	videoPoster: string
+	videoLink: string
 }
 
 
 registerBlockType( metadata.name, {
     attributes: {
-		type: {
-			enum: [ 'link', 'popup', 'video' ]
-		},
-		// Link
-		link: {
-			type: 'string'
-		},
-		target: {
-			type: 'string'
-		},
-		value: {
-			type: 'string'
-		}
+		type: { enum: [ 'link', 'popup', 'video' ] },
+		value: { type: 'string' },
+
+		link: { type: 'string' },
+		target: { type: 'string' },
+
+		popupId: { type: 'number' },
+
+		videoType: { type: 'string' },
+		videoFile: { type: 'string' },
+		videoPoster: { type: 'string' },
+		videoLink: { type: 'string' },
     },
 
     example: {},

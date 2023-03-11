@@ -66,7 +66,9 @@ const IntroEdit = ( props: TProps ) => {
 
 	if ( !hasInnerBlocks ) {
 		replaceInnerBlocks( clientId, [
-			createBlock( BUTTON_COMPONENT, {} )
+			createBlock( BUTTON_COMPONENT, {
+				type: 'popup'
+			} )
 		] )
 	}
 
