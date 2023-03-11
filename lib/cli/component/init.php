@@ -11,4 +11,4 @@ add_action( 'init', function() {
 		$template_dir . hm_assets_bundle( 'js/blocks/block-{{name}}.js' ),
 		['jquery', 'acf']
 	);
-});
+} );

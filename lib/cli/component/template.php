@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Hero.
+ * Bennet Component Gallery Slider
  *
  * @var array $block The block settings and attributes.
  * @var string $content The block inner HTML (empty).
@@ -22,9 +22,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 
 ?>
 
+<div class="component-{{name}}">
 
-<section class="section section-{{name}}">
-	<?= hm_get_top_gap() ?>
-
-	<?= hm_get_bottom_gap() ?>
-</section>
+</div>
