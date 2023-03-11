@@ -27,9 +27,9 @@ $html-font-size: 10;
 $html-font-size-sm: 8;
 
 @function rem($pxValue) {
-	@return math.div($pxValue, $html-font-size) + rem;
+    @return math.div($pxValue, $html-font-size) + rem;
 }
 
 @function rem_sm($pxValue) {
-	@return math.div($pxValue, $html-font-size-sm) + rem;
+    @return math.div($pxValue, $html-font-size-sm) + rem;
 }

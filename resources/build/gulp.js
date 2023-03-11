@@ -69,11 +69,12 @@ const styles = () => {
 };
 
 const blockStyles = () => {
-	const src = utils.srcStylesPath("blocks/*.scss");
+	const sectionsSrc = utils.srcBlocks( 'sections/*/scss/*.scss' );
+	const componentsSrc = utils.srcBlocks( 'components/*/scss/*.scss' );
 	const dest = utils.buildStylesBlocksPath();
 
 	return gulp
-		.src(src, {
+		.src( [sectionsSrc, componentsSrc] , {
 			allowEmpty: true,
 		})
 		.pipe(gulpif(isDev, sourcemaps.init()))
@@ -124,13 +125,15 @@ const adminstyles = () => {
  */
 const scripts = () => {
 	const src = utils.srcScriptsPath("main.js");
-	const srcBlocks = utils.srcScriptsPath("blocks/*.js");
+	const srcBlocksSections = utils.srcBlocks("sections/*/js/*.js");
+	const srcBlocksComponents = utils.srcBlocks("components/*/js/*.js");
+	const srcBlocksCore = utils.srcBlocks("core/*/js/*.js");
 	const srcAdmin = utils.srcScriptsPath("admin.js");
 	const dest = utils.buildScriptsPath();
 	const config = require("./webpack");
 
 	return gulp
-		.src([src, srcBlocks, srcAdmin])
+		.src([src, srcBlocksSections, srcBlocksComponents, srcBlocksCore, srcAdmin])
 		.pipe(named())
 		.pipe(plumber({ errorHandler: error }))
 		.pipe(webpack(config, bundler))

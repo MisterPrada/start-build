@@ -11,13 +11,14 @@
 @import "generic/fonts";
 @import "generic/forms";
 @import "generic/base";
+@import "generic/swiper";
 @import "generic/helpers";
 
 /* ------------------------------------------------------------ *\
 	Overwrites
 \* ------------------------------------------------------------ */
 
-@import "overwrites/_admin.gutenberg";
+@import "overwrites/admin.gutenberg";
 
 .acf-block-preview {
 	/* ------------------------------------------------------------ *\
@@ -26,3 +27,4 @@
 
 	@import "components/*";
 }
+

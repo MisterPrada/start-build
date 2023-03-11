@@ -256,6 +256,7 @@ strong {
 .section {
     position: relative;
     overflow: hidden;
+	font-family: $montserrat;
 
     &__bg {
         position: absolute;
