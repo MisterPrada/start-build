@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+if(isset($argv[1])){
+    if($argv[1] == 'make:section'){
+		if ( !empty( $argv[2] ) ) {
+			copyDirectory(__DIR__ . '/lib/cli/section', __DIR__ . '/blocks/sections/' . $argv[2], $argv[2] );
+		}else{
+			echo 'Error';
+		}
+    }
+}
+
+function copyDirectory($sourceDir, $destDir, $newName) {
+
+	if (!file_exists($destDir)) {
+		mkdir($destDir);
+	}
+
+	// Ищем все файлы в директории и переименовываем их
+	foreach (glob($sourceDir) as $filename) {
+		$newFilename = str_replace('{{name}}', $newName, $filename);
+		echo $newFilename . PHP_EOL;
+		//rename($filename, $destDir . '/' . $newFilename);
+	}
+}
