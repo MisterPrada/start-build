@@ -10,7 +10,7 @@
 	Component: Gallery Slider
 \* ------------------------------------------------------------ */
 
-.acf-block-preview .section-hero * {
+.acf-block-preview .component-{{name}} * {
 	pointer-events: none !important;
 
 	& .post-empty-message a {
@@ -18,7 +18,7 @@
 	}
 }
 
-.block-gallery,
-.acf-block-preview .block-gallery {
+.component-{{name}},
+.acf-block-preview .component-{{name}} {
 
 }

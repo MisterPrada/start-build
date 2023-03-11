@@ -22,6 +22,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 
 ?>
 
-<div class="block-gallery">
+<div class="component-{{name}}">
 
 </div>
