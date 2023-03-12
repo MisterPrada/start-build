@@ -23,13 +23,17 @@ export enum EType {
 	Popup = 'popup',
 	Video = 'video'
 }
+export enum EVideoType {
+	SelfHosted = 'selfHosted',
+	YouTube = 'youtube'
+}
 export type TAttributes = {
 	type: EType
 	value: string
 	link: string
 	target: string
 	popupId: number
-	videoType: string
+	videoType: EVideoType
 	videoFile: string
 	videoPoster: string
 	videoLink: string
@@ -46,7 +50,7 @@ registerBlockType( metadata.name, {
 
 		popupId: { type: 'number' },
 
-		videoType: { type: 'string' },
+		videoType: { enum: [ 'selfHosted', 'youtube' ] },
 		videoFile: { type: 'string' },
 		videoPoster: { type: 'string' },
 		videoLink: { type: 'string' },
